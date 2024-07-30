@@ -1,0 +1,102 @@
+:root {
+  /* Colors */
+  --Colors-Generic-White: #fff;
+  --Colors-Generic-Black: #000;
+  --Colors-Neutral-800: #433f3c;
+  --Colors-Neutral-700: #66605c;
+  --Colors-Neutral-600: #89807b;
+  --Colors-Neutral-500: #a7a19d;
+  --Colors-Neutral-300: #cac6c4;
+  --Colors-Neutral-200: #dbd8d7;
+  --Colors-Neutral-100: #eeedec;
+  --Colors-Neutral-50: #f5f4f4;
+  --Colors-Neutral-900: #23201f;
+  --colors-neutral-100: #eeedec;
+  --Colors-Primary-50: #fcf1eb;
+  --Colors-Success-50: #eafcf0;
+  --Colors-Danger-50: #fef7f6;
+  --Colors-Neutral-50: #f5f4f4;
+  --Colors-Primary-600: #df6f2f;
+  --Colors-Success-800: #1b7a38;
+  --colors-danger-500-main: #eb4337;
+  --colors-primary-500-main: #ee7531;
+  --Neutral-300: #D6D6D6;
+
+
+  /* Fonts */
+  --figtree-font: "Figtree", sans-serif;
+  --onest-font: "Onest", sans-serif;
+
+  /* Shadows */
+  --main-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.1);
+
+  /*Border Width and Color*/
+  --main-solid-border: 1px solid var(--Colors-Generic-Black);
+}
+
+p {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+}
+.toolSwift {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.toolSwift .toolSwiftWrapper {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 80px);
+}
+.toolSwiftWrapper .toolSwiftPages {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 24px;
+}
+.mainBttn {
+  border-radius: 24px !important;
+  text-transform: capitalize !important;
+  padding: 8px 14px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-family: var(--figtree-font) !important;
+  cursor: pointer !important;
+}
+.mainBttn.white {
+  color: var(--Colors-Generic-Black) !important;
+  background: var(--Colors-Generic-White) !important;
+  border: 1px solid var(--Colors-Neutral-100) !important;
+  transition: 0.3s all ease-in-out !important;
+}
+.mainBttn.white:hover {
+  background: var(--Colors-Neutral-50);
+}
+.mainBttn.black {
+  border: none;
+  background: var(--Colors-Neutral-900);
+  color: var(--Colors-Generic-White);
+  background: var(--Colors-Neutral-900);
+}
+.mainBttn.black:hover {
+  background: var(--Colors-Neutral-900);
+}
+.noshadow {
+  box-shadow: none !important;
+}
+.mainBttn.noborder {
+  border: none !important;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--Colors-Neutral-50);
+  outline: none;
+  border-radius: 6px;
+}

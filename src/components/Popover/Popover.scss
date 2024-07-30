@@ -1,0 +1,96 @@
+#mainPopover{
+    background-color: var(--Colors-Generic-White);
+    box-shadow: none;
+    border-radius: 30px;
+    text-transform: capitalize;
+    color: var(--Colors-Generic-Black);
+    font-family: var(--figtree-font);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+    width: 193px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 10px 4px 4px;
+    .bttnTxt{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50%;
+    }
+    .userInfo{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+        .userName{
+            color: var(--Colors-Generic-Black);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 130%;
+        }
+        .userRole{
+            color: var(--Colors-Neutral-500);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 130%; /* 18.2px */
+        }
+    }
+    .logoImg{
+        margin-left: 10px;
+    }
+    .iconCircle{
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid var(--Colors-Neutral-100);
+        background: var(----Colors-Generic-White);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--Colors-Generic-Black);
+        transition: .3s all ease-in-out;
+        &.active{
+            transform: rotate(180deg);
+        }
+    }
+}
+#clickable-popver{
+    min-width: 100%;
+    .MuiPopover-paper{
+    display: flex;
+    border: 1px solid var(--Colors-dark);
+    background-color: var(--Colors-Generic-White);
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: none;
+    box-shadow: var(--main-shadow);
+    .optionsBttns{
+        padding: 10px 14px;
+        text-transform: capitalize;
+        color: var(--Colors-Neutral-800);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%; /* 18.2px */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: var(--figtree-font);
+        gap: 8px;
+        border-bottom: 1px solid var(--Colors-Neutral-50);
+        &:hover, &.active{
+            border-radius: 12px;
+            background: var(--Colors-Neutral-50);
+        }
+        .linkIcon{
+            width: 20px;
+            height: 20px;
+            path{
+            fill:var(--Colors-Neutral-700);
+            }
+        }
+    }
+    }
+}

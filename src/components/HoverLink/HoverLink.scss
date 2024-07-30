@@ -1,0 +1,116 @@
+.sideBarHoverLink{
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    color: var(--Colors-Neutral-800);
+    font-family: var(--figtree-font);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    position: relative;
+    height: calc(38px - 12px);
+    align-self: stretch;
+    text-transform: capitalize;
+    transition: .3s all ease-in-out;
+    width: calc(100% - 18px);
+    z-index:10 ;
+    cursor: pointer;
+    .linkTxt{
+        opacity: 1;
+        width: fit-content;
+    }
+    .linkIcon{
+        width: 20px;
+        height: 20px;
+        path{
+        fill:var(--Colors-Neutral-700);
+        }
+    }
+    .countBadge{
+        display: flex;
+        width: 23px;
+        height: 20px;
+        justify-content: center;
+        align-items: center;
+        background: var(--Colors-Neutral-50);
+        border-radius: 50%;
+        font-family: var(--figtree-font);
+        color: var(--Colors-Generic-Black);
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 130%;
+        position: absolute;
+        right: 10px;
+    }
+    &:hover{
+        background-color: var(--Colors-Neutral-50);
+        color: var(--Colors-Neutral-800);
+
+    }
+    &.active{
+        background-color: var(--Colors-Generic-Black);
+        color: var(--Colors-Generic-White);
+        .linkIcon{
+            width: 20px;
+            height: 20px;
+            path{
+            fill:var(--Colors-Generic-White);
+            }
+        }
+        &:hover{
+            background-color: var(--Colors-Generic-Black);
+            color: var(--Colors-Generic-White);
+        }    
+    }
+}
+.hoverSideLinkOverlay{
+    padding: 16px 0px;
+    text-align: center;
+    border-radius: 12px;
+    background: var(--Colors-Generic-White);
+    box-shadow: 0px 8px 24px -3px rgba(0, 0, 0, 0.10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-family: var(--figtree-font);
+    color: var(--Colors-Generic-Black);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%; 
+    opacity: 0;
+    max-width: 0px;
+    z-index: 9;
+    span{
+        width: 1px;
+    }
+    &::after{
+        content: '';
+        background: url('/assets/arrowIcon.svg');
+        width: 0px;
+        height: 52px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: -7px;
+    }
+    &.shown{
+        transition: opacity .3s ease-in-out;
+        padding: 16px 20px;
+        max-width: 200px;
+        opacity: 1;
+        z-index: 11;
+        span{
+            width: fit-content;
+        }
+        &::after{
+            width: 9px;
+        }
+    }
+}

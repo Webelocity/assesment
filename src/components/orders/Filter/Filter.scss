@@ -1,0 +1,198 @@
+#Filter,
+#DateFilter,
+#Sort {
+  max-height: 640px;
+  width: auto;
+  margin-top: 8px;
+  .MuiPopover-paper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: var(--main-solid-border);
+    background: var(--Colors-Generic-White);
+    box-shadow: var(--main-shadow);
+    .upper {
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 16px;
+        p {
+          color: var(--Colors-Generic-Black);
+          font-family: var(--figtree-font);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%;
+        }
+        .close_button {
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .filter_field {
+        display: flex;
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+        border-top: 1px solid var(--colors-neutral-100);
+        .field_head {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 12px;
+          flex: 1 0 0;
+          align-self: stretch;
+          .field_name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            flex: 1 0 0;
+            color: var(--Colors-Generic-Black);
+            font-family: var(--figtree-font);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .reset {
+            padding: 8px 14px;
+            gap: 4px;
+            border-radius: 24px;
+            color: var(--Colors-Neutral-500);
+            text-align: center;
+            font-family: var(--figtree-font);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            text-transform: none;
+          }
+        }
+        .field_control {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          position: relative;
+          align-self: stretch;
+          .date_labels {
+            display: flex;
+            flex-direction: row;
+            .date_label {
+              color: var(--Colors-Generic-Black);
+              font-family: var(--figtree-font);
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 130%;
+              width: 50%;
+            }
+            .calender_icon {
+              width: 24px;
+              height: 24px;
+              position: absolute;
+              bottom: 22%;
+              &.first_field {
+                left: 41%;
+              }
+              &.second_field {
+                left: 92%;
+              }
+            }
+          }
+          .MuiStack-root {
+            gap: 12px;
+          }
+          .MuiStack-root div,
+          fieldset {
+            margin-left: 0;
+            border-radius: 16px;
+            border-color: var(--Colors-Neutral-300);
+          }
+          .MuiStack-root div legend,
+          .MuiInputLabel-shrink,
+          legend {
+            display: none;
+          }
+          .MuiMultiInputDateRangeField-separator {
+            display: none;
+          }
+          .MuiSelect-icon {
+            margin-right: 13px;
+            width: 20px;
+            height: 20px;
+          }
+          .MuiFormLabel-root {
+            display: flex;
+            &.Mui-focused {
+              display: none;
+            }
+          }
+          .MuiFormLabel-filled {
+            display: none !important;
+          }
+        }
+      }
+    }
+    .lower {
+      display: flex;
+      flex-direction: row;
+      padding: 14px 24px;
+      justify-content: space-between;
+      border-radius: 0px 0px 16px 16px;
+      background: var(--Colors-Neutral-50);
+    }
+  }
+}
+
+.transparentBttn {
+  width: 100% !important;
+  text-align: left;
+  padding: 0px 10px !important;
+  color: var(--Colors-Neutral-600) !important;
+  font-family: var(--figtree-font) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 130%;
+  margin: 0px !important;
+  height: 47px;
+  background-color: var(--Colors-Generic-White) !important;
+  text-transform: capitalize !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0ms !important;
+  &:hover {
+    background: var(--Colors-Neutral-50) !important;
+  }
+  .MuiSvgIcon-root {
+    font-size: 16px;
+  }
+  .MuiCheckbox-colorPrimary.Mui-checked {
+    color: var(--Colors-Primary-600);
+  }
+  .MuiCheckbox-colorSecondary.Mui-checked {
+    color: var(--Colors-Primary-600);
+  }
+  .MuiCheckbox-root {
+    color: var(--Colors-Neutral-200);
+    border-radius: 4px;
+    padding: 4px;
+  }
+  .MuiCheckbox-root:hover {
+    color: var(--Colors-Primary-600);
+  }
+}

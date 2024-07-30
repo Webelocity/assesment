@@ -1,0 +1,24 @@
+.SearchComponent{
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid var(--Colors-Neutral-200);
+    background: var(--Colors-Generic-White);
+    padding: 12px 14px;
+    color: var(--Colors-Neutral-300);
+    gap: 4px;
+    font-family: var(--figtree-font);
+    width: 50%;
+    max-width: 812px;
+    .icon{
+        font-size: 20px;
+    }
+    input{
+        align-self: stretch;
+        width: calc(100% - 24px);
+        border: none;
+        &:focus{
+            outline: none;
+        }
+    }
+}

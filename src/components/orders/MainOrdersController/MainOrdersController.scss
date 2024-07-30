@@ -1,0 +1,30 @@
+.topOrderPagepWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    h1{
+        color: var(--Colors-Generic-Black);
+        font-family: var(--onest-font);
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 120%;
+        margin: 0px;
+    }
+    .bttns-Wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        .mainBttn{
+            position: relative;
+            overflow: hidden;
+            max-height: 34px;
+            &.light{
+                border: 1px solid var(--Colors-Neutral-100);
+                background: var(--Colors-Generic-White);
+                color: var(--Colors-Generic-Black);
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+.ordersTablesScrollable{
+    max-height: 576px;
+    overflow-y: auto;
+.toolswiftTable{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0px;
+    thead{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    tbody{
+        position: relative;
+        z-index: 9;
+    }
+    tr{
+        height: 47px;
+        background-color: var(--Colors-Generic-White);
+    }
+    th{
+        margin: 0px;
+        text-align: left;
+        padding: 0px 10px;
+        color: var(--Colors-Neutral-600);
+        font-family: var(--figtree-font);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%; /* 18.2px */
+        margin: 0px;
+        height: 47px;
+        background-color: var(--Colors-Generic-White);
+        &:first-child, &:last-child{
+            padding: 0px 6px;
+        }
+        &.clickable{
+            cursor: pointer;
+            &:hover{
+                background: var(--Colors-Neutral-50);
+            }
+        }
+    }
+    .th-td-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+            .MuiSvgIcon-root {
+              font-size: 16px; 
+            }
+            .MuiCheckbox-colorPrimary.Mui-checked {
+                color: var(--Colors-Primary-600);
+            }
+            .MuiCheckbox-colorSecondary.Mui-checked {
+                color: var(--Colors-Primary-600);
+            }
+            .MuiCheckbox-root{
+            color: var(--Colors-Neutral-200);
+            border-radius: 4px;
+            padding: 4px;
+            }
+            .MuiCheckbox-root:hover {
+                color: var(--Colors-Primary-600);
+            }
+    }
+    td{
+        margin: 0px;
+        text-align: left;
+        padding: 0px 10px;
+        border-top: 1px solid var(--Colors-Neutral-50);
+        margin: 0px;
+        color: var(--Colors-Generic-Black, #000);
+        font-family: var(--figtree-font);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        &:first-child, &:last-child{
+            padding: 0px 6px;
+        }
+        &.bold{
+            font-weight: 600;
+        }
+        .oranged{
+            color: var(--Colors-Primary-600);
+        }
+        .lightTxt{
+            color: var(--Colors-Neutral-500);
+            font-size: 12px;
+        }
+        .badge{
+            padding: 4px 8px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            width: fit-content;
+            white-space: nowrap;
+            font-size: 14px;
+            .icon{
+                height: 14px;
+                width: 14px;
+            }
+            &.on_credit, &.draft{
+                background: var(--Colors-Neutral-50);
+                color: var(--Colors-Neutral-800);
+            }
+            &.paid, &.picked_up, &.fulfilled, &.delivered{
+                background: var(--Colors-Success-50);
+                color: var(--Colors-Success-800);
+            }
+            &.refunded, &.cancelled{
+                color: var(--colors-danger-500-main);
+                background: var(--Colors-Danger-50);
+            }
+            &.awaiting_payment, &.unfulfilled, &.overdue{
+                color: var(--colors-primary-500-main);
+                background: var(--Colors-Danger-50);
+            }
+            &.picking_packing, &.out_for_delivery, &.ready_for_pickup{
+                color: #5AA8D4;
+                background: #E1F6FF;
+            }
+        }
+        .actions{
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            .actionBttn{
+                position: relative;
+                padding: 4px;
+                font-size: 24px;
+                .notifCircle{
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    border: 2px solid var(--Colors-Generic-White);
+                    top: 5px;
+                    right: 5px;
+                    background: var(--colors-primary-500-main);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+}
