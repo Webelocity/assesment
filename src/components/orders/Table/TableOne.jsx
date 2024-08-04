@@ -37,6 +37,7 @@ const TableOne = ({ rows, columns, sort }) => {
 
   // handles Table sorting based on given sort options
   const sortedData = () => {
+    console.log('sort Options', sortOptions)
     let sortedRows = [...rows];
     for (let key in sortOptions) {
       if (sortOptions.hasOwnProperty(key)) {
@@ -44,12 +45,13 @@ const TableOne = ({ rows, columns, sort }) => {
         sortedRows.sort((a, b) => {
           const aValue = getNestedValue(a, key);
           const bValue = getNestedValue(b, key);
-
           if (
             typeof aValue === "string" &&
             key !== "date" &&
             key !== "expected_deliver_date"
           ) {
+            if(type === ""){return;}
+            return type === "" && nothing
             return type === "ASC"
               ? aValue.localeCompare(bValue)
               : bValue.localeCompare(aValue);
@@ -80,6 +82,13 @@ const TableOne = ({ rows, columns, sort }) => {
   useEffect(() => {
     // console.log(sort);
     // Ensure sortOptions state is synchronized with the prop
+    console.log('sort Options before', sort);
+    if (sort.customerName) {
+      sort["userData.name"] = sort.customerName;
+      delete sort.customerName;
+    }
+    console.log('sort Options after', sort);
+
     setSortOptions((prev) => ({
       ...prev,
       ...sort,
