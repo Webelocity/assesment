@@ -51,7 +51,6 @@ const TableOne = ({ rows, columns, sort }) => {
             key !== "expected_deliver_date"
           ) {
             if(type === ""){return;}
-            return type === "" && nothing
             return type === "ASC"
               ? aValue.localeCompare(bValue)
               : bValue.localeCompare(aValue);
