@@ -30,52 +30,66 @@ const TableOne = ({ rows, columns, sort }) => {
       ? setChecked([])
       : setChecked(rows.map((col) => col._id));
   };
-
+  
+  const priorityOrder = ["_id", "customerName", "date", "expected_deliver_date", "total"];
+  
   const getNestedValue = (obj, path) => {
     return path.split(".").reduce((prev, curr) => prev && prev[curr], obj);
   };
-
-  // handles Table sorting based on given sort options
+  
+  // Handles Table sorting based on given sort options
   const sortedData = () => {
     console.log('sort Options', sortOptions)
     let sortedRows = [...rows];
-    for (let key in sortOptions) {
-      if (sortOptions.hasOwnProperty(key)) {
-        const type = sortOptions[key];
-        sortedRows.sort((a, b) => {
+    
+    sortedRows.sort((a, b) => {
+      for (let key of priorityOrder) {
+        if (sortOptions.hasOwnProperty(key)) {
+          const type = sortOptions[key];
           const aValue = getNestedValue(a, key);
           const bValue = getNestedValue(b, key);
+  
+          if (type === "") continue;
+  
           if (
             typeof aValue === "string" &&
             key !== "date" &&
             key !== "expected_deliver_date"
           ) {
-            if(type === ""){return;}
-            return type === "ASC"
-              ? aValue.localeCompare(bValue)
-              : bValue.localeCompare(aValue);
+            const comparison = aValue.localeCompare(bValue);
+            if (comparison !== 0) {
+              return type === "ASC" ? comparison : -comparison;
+            }
           } else if (typeof aValue === "number") {
-            return type === "ASC" ? aValue - bValue : bValue - aValue;
+            const comparison = aValue - bValue;
+            if (comparison !== 0) {
+              return type === "ASC" ? comparison : -comparison;
+            }
           } else if (key === "date") {
-            return type === "ASC"
-              ? new Date(aValue) - new Date(bValue)
-              : new Date(bValue) - new Date(aValue);
+            const comparison = new Date(aValue) - new Date(bValue);
+            if (comparison !== 0) {
+              return type === "ASC" ? comparison : -comparison;
+            }
           } else if (key === "expected_deliver_date") {
-            // Parse date strings in "15 Feb, 2024" format
             const parseDate = (dateStr) => {
               const [day, month, year] = dateStr.split(" ");
               return new Date(`${month} ${day}, ${year}`).getTime();
             };
-            return type === "ASC"
-              ? parseDate(aValue) - parseDate(bValue)
-              : parseDate(bValue) - parseDate(aValue);
+            const comparison = parseDate(aValue) - parseDate(bValue);
+            if (comparison !== 0) {
+              return type === "ASC" ? comparison : -comparison;
+            }
           }
-          return 0;
-        });
+        }
       }
-    }
+      return 0;
+    });
+  
     return sortedRows;
   };
+  
+  
+  
 
   // Show sorting options in the console
   useEffect(() => {
